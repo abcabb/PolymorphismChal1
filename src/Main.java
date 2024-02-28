@@ -8,5 +8,8 @@ public class Main {
 
         Movie movie3 = new Comedy("Stupid and Idiot");
         movie3.watchMovie();
+
+        Movie newMovie = Movie.getMovie("science fiction", "Star Wars");
+        newMovie.watchMovie();
     }
 }
