@@ -15,11 +15,20 @@ public class NextMain {
         Movie advenMov = (Movie) advMov;
         advenMov.watchMovie();
 
-
         var airplane = Movie.getMovie("Comedy", "Airplane");
         airplane.watchMovie(); // Burada oluyor çünkü var compile time zamanını görebiliyor.
 
         var plane = new Comedy("Airplane");
         plane.watchComedy();
+
+        Object unknownObject = Movie.getMovie("S", "Haha");
+        if(unknownObject.getClass().getSimpleName() == "Comedy"){
+            ((Comedy)unknownObject).watchComedy();
+        }else if(unknownObject instanceof Adventure){
+            Adventure movie10 = (Adventure) unknownObject;
+            movie10.watchAdventure();
+        }else if(unknownObject instanceof ScienceFiction syfy){
+            syfy.watchScienceFiction();
+        }
     }
 }
